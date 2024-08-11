@@ -46,6 +46,7 @@ public class LikesController : BaseApiController
         return BadRequest("Failed to like user");
     }
 
+    [HttpGet]
     public async Task<ActionResult<PagedList<LikeDto>>> GetUserLikes([FromQuery]LikesParams likesParams)
     {
         likesParams.UserId = User.GetUserId();
